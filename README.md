@@ -30,3 +30,11 @@ cd demo-site && npm run dev      # localhost:5193
 | `4242 4242 4242 4242` | succeeds |
 | `4000 0000 0000 0002` | declines |
 | `4000 0000 0000 0341` | fails once, then works |
+
+## What I'd explore next
+
+- A real focus trap on the modal. Tab works fine through the form, but since the iframe is its own document, tabbing past the close button can escape back into the page behind it.
+- Let the iframe tell the SDK how tall it wants to be, instead of a fixed-size box.
+- Some way to recover if the host page reloads mid-checkout. Right now the session just disappears.
+- A few more test cards (expired, insufficient funds) and maybe more than one currency.
+- An actual test suite. I checked all of this by hand and with a throwaway script while building it, but nothing's committed.
