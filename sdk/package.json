@@ -1,0 +1,16 @@
+{
+  "name": "@dodo/checkout-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Tiny embeddable checkout SDK - plain TypeScript, zero runtime deps.",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --format=iife --global-name=DodoCheckout --outfile=dist/dodo-checkout.js && node copy-to-demo.js",
+    "watch": "esbuild src/index.ts --bundle --format=iife --global-name=DodoCheckout --outfile=dist/dodo-checkout.js --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}

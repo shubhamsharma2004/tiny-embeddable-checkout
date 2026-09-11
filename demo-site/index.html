@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Goods</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <span class="logo">Aurora&nbsp;Goods</span>
+        <nav class="site-nav">
+          <a href="#">Shop</a>
+          <a href="#">Pricing</a>
+          <a href="#">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <h1>Considered goods, made to last.</h1>
+        <p>
+          Small-batch pieces built from real materials — no synthetics, no shortcuts. Free
+          shipping and returns on every order.
+        </p>
+      </section>
+
+      <section class="product-showcase">
+        <div class="product-tile">
+          <div class="product-tile__media" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 96 96" fill="none">
+              <path
+                d="M34 34 C34 22 40 16 48 16 C56 16 62 22 62 34"
+                stroke="#2f5c48"
+                stroke-opacity="0.5"
+                stroke-width="4"
+                stroke-linecap="round"
+                fill="none"
+              />
+              <path
+                d="M24 34 H72 L67 78 C66.4 82.5 62.6 86 58 86 H38 C33.4 86 29.6 82.5 29 78 Z"
+                fill="#2f5c48"
+              />
+              <line x1="24" y1="46" x2="72" y2="46" stroke="rgba(0,0,0,0.1)" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="product-tile__body">
+            <h2>The Weekend Tote</h2>
+            <p>
+              Hand-stitched 14oz canvas with full-grain leather straps. Fits a 15&Prime; laptop
+              with room to spare. Available in 4 colors.
+            </p>
+            <div class="product-tile__footer">
+              <span class="price">From &#8377;10,999</span>
+              <button id="buy-btn" class="buy-btn" type="button" data-product-id="prod_123">
+                Buy now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="log-section">
+        <div class="log-section__head">
+          <h2>Order activity</h2>
+          <button id="clear-log-btn" class="clear-btn" type="button">Clear</button>
+        </div>
+        <p class="log-section__hint">A live feed of what happens after you click Buy now.</p>
+        <div id="log" class="log" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="/dodo-checkout.js" data-checkout-url="http://localhost:5194"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

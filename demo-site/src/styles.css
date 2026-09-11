@@ -1,0 +1,294 @@
+:root {
+  --paper: #faf7f1;
+  --ink: #211f1c;
+  --ink-muted: #746f66;
+  --hairline: #e6e1d8;
+  --accent: #1f4d3d;
+  --accent-hover: #163a2d;
+  --accent-tint: #e7efe9;
+  --card-bg: #ffffff;
+  --radius: 8px;
+  --font-display: ui-serif, Georgia, 'Times New Roman', serif;
+  --font-body:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--hairline);
+  background: var(--paper);
+}
+
+.site-header__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 52px 24px 84px;
+}
+
+.hero {
+  max-width: 560px;
+  margin-bottom: 44px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.hero p {
+  color: var(--ink-muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.product-showcase {
+  margin-bottom: 56px;
+}
+
+.product-tile {
+  display: flex;
+  gap: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.product-tile__media {
+  width: 92px;
+  height: 92px;
+  border-radius: var(--radius);
+  background: var(--accent-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.product-tile__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-tile__body h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+.product-tile__body > p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.product-tile__footer {
+  margin-top: auto;
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.buy-btn {
+  background: var(--accent);
+  color: var(--paper);
+  border: none;
+  padding: 11px 22px;
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 100ms ease;
+  font-family: var(--font-body);
+}
+
+.buy-btn:hover {
+  background: var(--accent-hover);
+}
+
+.log-section__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.log-section h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 19px;
+  margin: 0 0 6px;
+}
+
+.log-section__hint {
+  color: var(--ink-muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  max-width: 640px;
+}
+
+.clear-btn {
+  background: none;
+  border: 1px solid var(--hairline);
+  color: var(--ink-muted);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.clear-btn:hover {
+  background: var(--card-bg);
+  color: var(--ink);
+}
+
+.log {
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  min-height: 140px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.log:empty::before {
+  content: 'No activity yet — click Buy now to start an order.';
+  display: block;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 13.5px;
+}
+
+.log-entry {
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  animation: dodo-log-in 180ms ease;
+}
+
+.log-entry:hover {
+  background: #faf9f6;
+}
+
+@keyframes dodo-log-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.log-entry__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.log-entry__badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.01em;
+}
+
+.log-entry--onSuccess .log-entry__badge {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.log-entry--onClose .log-entry__badge {
+  background: #ece9e3;
+  color: #57534b;
+}
+
+.log-entry--onError .log-entry__badge {
+  background: #f7e9e4;
+  color: #9c3b2e;
+}
+
+.log-entry--info .log-entry__badge {
+  background: #eef0eb;
+  color: #4c5a4f;
+}
+
+.log-entry__time {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.log-entry__payload {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  background: #f7f5f0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
